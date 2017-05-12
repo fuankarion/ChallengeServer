@@ -1,0 +1,31 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+<form id="uploadForm" enctype="multipart/form-data" action= "/api/upload" method="post" style="background-color: rgb(240,240,240);width: 300px">
+	<ul class="form-style-1">
+		<br/>
+		<li>
+			<label>Texture Challenge</label>
+		</li>
+		<li>
+			<br/>
+			<label>Team Name <span class="required">*</span></label>
+			<input type="text" name="uploader" class="field-divided"  placeholder="Your Team's Name " ><br>
+		</li>
+		<li>
+			<label>Predictions File <span class="required">*</span></label>
+			<input type="file" name="fileData" /><br>
+		</li>
+
+		<table  cellpadding="10">
+			<tr>
+				<td><a href="/leaderBoard" style="color:#4691A4;font-weight: bold;font-size: 90%; ">LeaderBoard</a></td>
+				<td><input type="submit" value="Upload Results" name="submit"></td>
+			</tr>
+
+		</table>
+
+	</ul>
+</form>
+</body>
