@@ -58,7 +58,11 @@ module.exports = {
             sumMji=sumMji+confusionMatrix[j][i];//FP are on cols
         }
         retVal= confusionMatrix[i][i]/sumMji;
-        return retVal.toFixed(2)
+        if(isNaN(retVal)){
+            retVal=0.0
+        }
+
+        return retVal.toFixed(3)
     },
 
     //See https://stats.stackexchange.com/questions/51296/how-do-you-calculate-precision-and-recall-for-multiclass-classification-using-co
@@ -69,12 +73,20 @@ module.exports = {
         }
 
         retVal= confusionMatrix[i][i]/sumMji;
-        return retVal.toFixed(2)
+        if(isNaN(retVal)){
+            retVal=0.0
+        }
+
+        return retVal.toFixed(3)
     },
     calculateFmeasure:function(precision,recall){
         precision=parseFloat(precision);
         recall=parseFloat(recall);
-        return (2*((precision*recall)/(precision+recall))).toFixed(2);
+        retVal= (2*((precision*recall)/(precision+recall))).toFixed(3);
+        if(isNaN(retVal)){
+            retVal=0.0
+        }
+        return retVal
     },
     getClassificationresutls:function(confusionMatrix){
     	var perClassPrecision = [];

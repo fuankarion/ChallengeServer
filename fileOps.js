@@ -56,6 +56,7 @@ var generateDetailedOutput=function(preds,submitedByName){
     var submisionRecall=PRHelper.calculateClassRecall(confusionMatrix,gtIdx);
     globalRecall=globalRecall+parseFloat(submisionRecall);
     var submisionFmeasure=PRHelper.calculateFmeasure(submisionPrecision,submisionRecall);
+    
   
     reportElement={
       class:gtIdx,
